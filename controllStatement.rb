@@ -28,3 +28,38 @@ end
 for i in 1..10
     puts i
 end
+
+# Do while loop
+t = 0 
+loop do
+     
+  puts "GeeksforGeeks"
+  t = 1+t
+# using boolean expressions
+ if t== 3
+  break
+ end
+  
+end
+
+#do while end
+
+#until loop
+var = 7
+ 
+# using until loop
+# here do is optional
+until var == 11 do
+ 
+  # code to be executed
+  puts var * 10
+  var = var + 1
+   
+# here loop ends
+end
+
+
+#Times method
+5.times do
+    puts "Yuvraj"
+    end
