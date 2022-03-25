@@ -6,12 +6,11 @@
 
  puts states
 
-numberAndWord = {
-    1 => "One"
-    2 => "Two"
-    3 => "Three"
-    4 => "four"
-    5 => "five"
+number_in_words = {
+    one: 1 ,
+    two: 2 ,
+    three: 3 ,
+    four: 4 ,
 }
 
-puts numberAndWord[2]
+puts number_in_words

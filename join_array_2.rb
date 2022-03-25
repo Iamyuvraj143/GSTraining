@@ -1,6 +1,5 @@
 #Join 2 arrays without inbuilt functions.
-friends = Array ["Shubham", "Chirag","Yuvraj"]
-family = ["mom", "dad","sister"]
-concatedArray = family.concat(friends)
-
-puts concatedArray
+friends =  %w(Shubham Chirag Yuvraj)
+family =  %w(mom dad sister)
+concated_array = family.concat(friends)
+puts concated_array
