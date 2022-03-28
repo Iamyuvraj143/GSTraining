@@ -1,30 +1,30 @@
-module MyModule
+module TaxModule
 
 # to check is item exempt from tax
 def exempt_good?(str)
   list_of_exempt_item = %w(food medicin chocolates pills book books chocolate)
-  re = false
+  gives = false
   for i in list_of_exempt_item
     if str.include?(i)
-      re = true
+    gives = true
     end
    end
-   re
+   gives
 end
 
   # to check if the entered item is in valid forma
   def is_valid_entry?(str)
     str
-    re= true
-    a= str.split(" ")
-    b = str.split(" at ")
-    quatity = a[0].to_i
-    price = b[1].to_f
+    gives= true
+    split_1 = str.split(" ")
+    split_2 = str.split(" at ")
+    quatity = split_1[0].to_i
+    price = split_2[1].to_f
 
     if quatity==0 || price == 0
-      re  = false
+      gives  = false
     end  #end of if condition
-    re
+    gives
  end  # end of is_valid_entry? method
 
 def create_new_bill
@@ -32,7 +32,6 @@ def create_new_bill
   puts "Enter the item purchase \n(example:1 book at 12.49 [quantity + item name and detail + at + price])"
   puts "Enter 'Done' When all items are entered"
   x = 0
-  # Using while
   while true do
      item[x] = gets
      x += 1
@@ -45,10 +44,4 @@ def create_new_bill
    end  #end of while loop
   item
  end   # end of create new bill
-
 end  # end module
-
-
-##Validation.create_new_bill
-#puts Validation.exempt_good?("1 imported bottle of perfume at 27.99")
-#puts Validation.imported?("1 imported bottle of perfume at 27.99")
