@@ -6,14 +6,14 @@ module TaxHelper
   def exempt_good?(str)
     item  = str.split(" ")
     exempted_item = item & LIST_OF_EXEMPT_ITEMS
-   !exempted_item.empty? 
+   !exempted_item.empty?
   end
 
   # to check if the entered item is in valid forma
   def is_valid_entry?(str)
-    quantity = item.split(" ")[0].to_i
-    price = item.split(" at ")[1].to_f
-    quatity == 0 || price == 0 ? false : true
+    quantity = str.split(" ")[0].to_i
+    price = str.split(" at ")[1].to_f
+    quantity == 0 || price == 0 ? false : true
   end   # end of is_valid_entry? method
 
   def create_new_bill
