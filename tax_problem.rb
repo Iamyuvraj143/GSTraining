@@ -14,13 +14,11 @@ class Billing
 
   def calculate_tax
     for item in @purchase_list
-      split_1= item.split(" ")
-      split_2 = item.split(" at ")
-      quatity = split_1[0].to_i
-      item  = split_2[0]
-      price = split_2[1].to_f
+      quantity = item.split(" ")[0].to_i
+      item_name = item.split(" at ")[0]
+      price = item.split(" at ")[1].to_f
 
-      if split_2[0].include?("imported")
+      if item_name.include?("imported")
         sales_tax_amount = ((price * SALES_TAX) / 100 ).round(2)
         total_tax_amount = total_tax_amount.to_f + sales_tax_amount.to_f
       end
@@ -32,7 +30,7 @@ class Billing
     
       final_price = price + sales_tax_amount.to_f + basic_tax_amount.to_f
       total_amount = total_amount.to_f  + final_price.to_f
-      puts"#{split_2[0]} at #{final_price.to_f.round(2)}"
+      puts"#{item_name} at #{final_price.to_f.round(2)}"
       sales_tax_amount = 0
       basic_tax_amount = 0
     end  # end of for loop

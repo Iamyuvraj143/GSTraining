@@ -6,7 +6,7 @@ module TaxHelper
   def exempt_good?(str)
     item  = str.split(" ")
     exempted_item = item & LIST_OF_EXEMPT_ITEMS
-    exempted_item.empty? ? false : true
+   !exempted_item.empty? 
   end
 
   # to check if the entered item is in valid forma
