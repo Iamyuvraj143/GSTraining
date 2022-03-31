@@ -13,7 +13,7 @@ module TaxHelper
   def is_valid_entry?(str)
     quantity = str.split(" ")[0].to_i
     price = str.split(" at ")[1].to_f
-    quantity == 0 || price == 0 ? false : true
+    !(quantity == 0 || price == 0) 
   end   # end of is_valid_entry? method
 
   def create_new_bill
