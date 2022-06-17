@@ -1,2 +1,1 @@
-# GTraining
-Gammastack Training File 
+# Ruby Pratice
